@@ -1,0 +1,405 @@
+* {margin: 0;padding: 0}
+#wrap {width: 410px;height: 410px;
+    background: #cc0733; margin: 0 auto;
+    position: relative;
+    perspective:1000px;
+    top:30px;
+}
+.card-box {
+    position: absolute;
+
+    width: 100px;
+    height: 140px;
+    transform-style:preserve-3d;
+    /*transform-origin: 50% 50% ;*/
+}
+.card-box img{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+
+    color: #fff
+}
+.card-box .front{transition:1.3s transform;
+    backface-visibility: hidden;
+}
+.card-box .back{transform:rotateY(180deg);
+    transition:1.3s transform;
+    }
+/*.card-box:hover img:nth-of-type(1) {transform:rotateY(-180deg);}*/
+/*.card-box:hover img:nth-of-type(2) {transform:rotateY(0deg);}*/
+
+#card0{
+    top:26px;
+    left:35px;
+    z-index: 25;
+}
+#card1{
+    top:26px;
+    left:155px;
+    z-index: 10;
+
+}
+#card2{
+    top:26px;
+    left:275px;
+    z-index: 50;
+}
+#card3{
+    top:186px;
+    left:35px;
+
+}
+#card4{
+    top:186px;
+    left:155px;
+
+}
+#card5{
+    top:186px;
+    left:276px;
+
+}
+
+.card0-move{
+    transform: translate(120px,80px);
+}
+.card1-move{
+    transform: translate(0px,80px);
+}
+.card2-move{
+    transform: translate(-120px,80px);
+}
+.card3-move{
+    transform: translate(120px,-80px);
+}
+.card4-move{
+    transform: translate(0px,-80px);
+}
+.card5-move{
+    transform: translate(-120px,-80px);
+}
+
+.card0-moveAndRotate{
+    animation-name:card0-go ,card0-swing ,card0-come;
+    animation-duration:2s ,1s ,2s;
+    animation-timing-function: ease,ease,ease;
+    animation-delay:1.3s,3.3s,4.3s;
+    transform-origin: 170px 80px ;
+
+}
+@keyframes card0-go {
+    0% {
+        transform:rotate(0) translate(0px,0px);
+    }
+    100% {
+        transform: rotate(0) translate(120px, 80px)
+    }
+}
+@keyframes card0-swing {
+    0% {
+        transform:rotate(0) translate(120px,80px);
+    }
+    50% {
+        transform:rotate(10deg) translate(120px,80px);
+    }
+    100% {
+        transform: rotate(0) translate(120px,80px);
+    }
+}
+@keyframes card0-come {
+    0% {
+        transform:rotate(0) translate(120px,80px);
+    }
+    100% {
+        transform: rotate(0) translate(0px,0px);
+    }
+}
+
+.card1-moveAndRotate{
+    animation-name:card1-go ,card1-swing ,card1-come;
+    animation-duration:2s ,1s ,2s;
+    animation-timing-function: ease,ease,ease;
+    animation-delay:1.3s,3.3s,4.3s;
+    transform-origin:  50px 80px ;
+
+}
+
+@keyframes card1-go {
+    0% {
+        transform:rotate(0) translate(0px,0px);
+    }
+    100% {
+        transform: rotate(0) translate(0px, 80px)
+    }
+}
+@keyframes card1-swing {
+    0% {
+        transform:rotate(0) translate(0px,80px);
+    }
+    50% {
+        transform:rotate(-10deg) translate(0px,80px);
+    }
+    100% {
+        transform: rotate(0) translate(0px,80px);
+    }
+}
+@keyframes card1-come {
+    0% {
+        transform:rotate(0) translate(0px,80px);
+    }
+    100% {
+        transform: rotate(0) translate(0px,0px);
+    }
+}
+
+.card2-moveAndRotate{
+    animation-name:card2-go ,card2-swing ,card2-come;
+    animation-duration:2s ,1s ,2s;
+    animation-timing-function: ease,ease,ease;
+    animation-delay:1.3s,3.3s,4.3s;
+    transform-origin:  0px 0px ;
+
+}
+
+@keyframes card2-go {
+    0% {
+        transform:rotate(0) translate(0px,0px);
+    }
+    100% {
+        transform: rotate(0) translate(-120px, 80px)
+    }
+}
+@keyframes card2-swing {
+    0% {
+        transform:rotate(0) translate(-120px, 80px);
+    }
+    50% {
+        transform:rotate(0) translate(-120px, 80px);
+    }
+    100% {
+        transform: rotate(0) translate(-120px, 80px);
+    }
+}
+@keyframes card2-come {
+    0% {
+        transform:rotate(0) translate(-120px,80px);
+    }
+    100% {
+        transform: rotate(0) translate(0px,0px);
+    }
+}
+
+.card3-moveAndRotate{
+    animation-name:card3-go ,card3-swing ,card3-come;
+    animation-duration:2s ,1s ,2s;
+    animation-timing-function: ease,ease,ease;
+    animation-delay:1.3s,3.3s,4.3s;
+    transform-origin:  0px 0px ;
+
+}
+
+@keyframes card3-go {
+    0% {
+        transform:rotate(0) translate(0px,0px);
+    }
+    100% {
+        transform: rotate(0) translate(120px, -80px)
+    }
+}
+@keyframes card3-swing {
+    0% {
+        transform:rotate(0) translate(120px, -80px)
+    }
+    50% {
+        transform:rotate(0) translate(120px, -80px)
+    }
+    100% {
+        transform: rotate(0) translate(120px, -80px)
+    }
+}
+@keyframes card3-come {
+    0% {
+        transform:rotate(0) translate(120px, -80px)
+    }
+    100% {
+        transform: rotate(0) translate(0px,0px);
+    }
+}
+
+.card4-moveAndRotate{
+    animation-name:card4-go ,card4-swing ,card4-come;
+    animation-duration:2s ,1s ,2s;
+    animation-timing-function: ease,ease,ease;
+    animation-delay:1.3s,3.3s,4.3s;
+    transform-origin:  0px 0px ;
+
+}
+
+@keyframes card4-go {
+    0% {
+        transform:rotate(0) translate(0px,0px);
+    }
+    100% {
+        transform: rotate(0) translate(0px, -80px)
+    }
+}
+@keyframes card4-swing {
+    0% {
+        transform:rotate(0) translate(0px, -80px)
+    }
+    50% {
+        transform:rotate(0) translate(0px, -80px)
+    }
+    100% {
+        transform: rotate(0) translate(0px, -80px)
+    }
+}
+@keyframes card4-come {
+    0% {
+        transform:rotate(0) translate(0px, -80px)
+    }
+    100% {
+        transform: rotate(0) translate(0px,0px);
+    }
+}
+
+.card5-moveAndRotate{
+    animation-name:card5-go ,card5-swing ,card5-come;
+    animation-duration:2s ,1s ,2s;
+    animation-timing-function: ease,ease,ease;
+    animation-delay:1.3s,3.3s,4.3s;
+    transform-origin:  0px 0px ;
+
+}
+
+@keyframes card5-go {
+    0% {
+        transform:rotate(0) translate(0px,0px);
+    }
+    100% {
+        transform: rotate(0) translate(-120px, -80px)
+    }
+}
+@keyframes card5-swing {
+    0% {
+        transform:rotate(0) translate(-120px, -80px)
+    }
+    50% {
+        transform:rotate(0) translate(-120px, -80px)
+    }
+    100% {
+        transform: rotate(0) translate(-120px, -80px)
+    }
+}
+@keyframes card5-come {
+    0% {
+        transform:rotate(0) translate(-120px, -80px)
+    }
+    100% {
+        transform: rotate(0) translate(0px,0px);
+    }
+}
+.hoverUp:hover{
+    transition: transform .2s ease .1s !important;
+    transform:  translate(0,-15px) !important;
+}
+
+
+.card0-flip-front{
+    transform:rotateY(-180deg) !important;
+}
+.card0-flip-back{
+    transform:rotateY(0deg) !important;
+}
+
+@keyframes swing1 /*定义动画名*/
+{
+    0% {
+        transform:rotate(0) translate(0px,80px)
+    }
+    /*定义起始帧样式，0%相当于from*/
+    25% {
+        transform:rotate(3deg) translate(0px,80px)
+    }
+    50% {
+        transform: rotate(6deg) translate(0px,80px)
+    }
+    75% {
+        transform:rotate(3deg) translate(0px,80px)
+    }
+    100% {
+        transform: rotate(0deg) translate(0px,80px)
+    }
+}
+
+@keyframes swing0 /*定义动画名*/
+{
+    0% {
+        transform:rotate(0) translate(120px,80px)
+    }
+    /*定义起始帧样式，0%相当于from*/
+    25% {
+        transform:rotate(-3deg) translate(120px,80px)
+    }
+    50% {
+        transform: rotate(-6deg) translate(120px,80px)
+    }
+    75% {
+        transform:rotate(-3deg) translate(120px,80px)
+    }
+    100% {
+        transform: rotate(0deg) translate(120px,80px)
+    }
+}
+
+.swing1{
+    animation-name:swing1;
+    animation-duration:1s;
+    animation-timing-function:linear;
+    animation-delay:3.8s;
+    transform-origin: 50px 80px ;
+
+}
+.swing0{
+    animation-name:swing0;
+    animation-duration:1s;
+    animation-timing-function:linear;
+    animation-delay:3.8s;
+    transform-origin: 170px 80px ;
+}
+
+.swingTest{
+
+    animation-name:swingTest;
+    animation-duration:2s;
+    animation-timing-function:linear;
+    animation-delay:1s;
+    transform-origin: 50% 0;
+}
+
+@keyframes swingTest /*定义动画名*/
+{
+    0% {
+        transform:rotate(0)
+    }
+    /*定义起始帧样式，0%相当于from*/
+    25% {
+        transform:rotate(-11deg)
+    }
+    50% {
+        transform: rotate(-22deg)
+    }
+    75% {
+        transform:rotate(-11deg)
+    }
+    100% {
+        transform: rotate(0deg)
+    }
+}
+
+#s1{
+
+}

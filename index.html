@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>css card animated</title>
+    <link href="css/flip.css" rel="stylesheet" type="text/css" />
+
+    <style type="text/css">
+
+    </style>
+
+    <script src="http://code.jquery.com/jquery-latest.js">
+
+    </script>
+
+    <script type="text/javascript">
+        $(function () {
+            var cardArr = [],cardState = []
+            for(var m=0;m<6;m++){
+                cardArr.push('card'+m);
+                cardState.push(0);
+            }
+
+
+            //start
+            $('#s1').click(function () {
+                for(var k=0;k<6;k++){
+                    if(cardState[k]==0){
+                        $('#'+cardArr[k]).find('img').each(function (i,j) {
+                            if(!cardState[k])
+                                if(i){
+                                    $(j).addClass('card0-flip-back')
+                                }else {
+                                    $(j).addClass('card0-flip-front')
+                                }
+                        });
+                    }
+                    $('#'+cardArr[k]).addClass(cardArr[k]+'-moveAndRotate');
+                }
+
+
+                setTimeout(function () {
+                    for(var k=0;k<6;k++){
+                        $('#'+cardArr[k]).removeClass(cardArr[k]+'-moveAndRotate');
+
+                        $('#'+cardArr[k]).addClass('hoverUp').one('click',function () {
+                            //点击 翻到正面
+                            cardState[k] = 1;
+                            $(this).find('img').each(function (i,j) {
+                                if(i){
+                                    $(j).removeClass('card0-flip-back')
+                                }else {
+                                    $(j).removeClass('card0-flip-front')
+                                }
+                            });
+                        });
+
+                    }
+
+                },6000);
+
+            });
+            //展示所有奖品s
+            $('#s2').click(function () {
+                for(var z=0;z<6;z++){
+
+                    $('#'+cardArr[z]).removeClass('hoverUp');
+                    if(cardState[z]==0){//背面的牌，需要反过来
+                        $('#'+cardArr[z]).find('img').each(function (i,j) {
+                            if(i){
+                                $(j).removeClass('card0-flip-back')
+                            }else {
+                                $(j).removeClass('card0-flip-front')
+                            }
+                        });
+                    }else{
+                        cardState[z] =0;
+                    }
+                }
+
+            });
+
+        });
+
+
+    </script>
+</head>
+<body>
+<div id="wrap">
+    <div class="card-box" id="card0">
+        <img src="img/front.png" class="front">
+        <img src="img/back.png"  class="back">
+    </div>
+    <div class="card-box" id="card1">
+        <img src="img/front.png" class="front">
+        <img src="img/back.png"  class="back">
+    </div>
+    <div class="card-box" id="card2">
+        <img src="img/front.png" class="front">
+        <img src="img/back.png"  class="back">
+    </div>
+    <div class="card-box" id="card3">
+        <img src="img/front.png" class="front">
+        <img src="img/back.png"  class="back">
+    </div>
+    <div class="card-box" id="card4">
+        <img src="img/front.png" class="front">
+        <img src="img/back.png"  class="back">
+    </div>
+    <div class="card-box" id="card5">
+        <img src="img/front.png" class="front">
+        <img src="img/back.png"  class="back">
+    </div>
+</div>
+
+<div style="width: 400px;height: 400px;margin: 0 auto;background-color: #cc0733;position: relative;top:40px;">
+    <div style="position: absolute;top: 30px;left: 40px;width: 100px;height: 140px;" id="s1" >
+        <img src="img/back.png" style="width: 100%;height: 100%;" />
+    </div>
+
+    <div style="position: absolute;top: 30px;left: 190px;width: 100px;height: 140px;" id="s2" >
+        <img src="img/front.png" style="width: 100%;height: 100%;" />
+    </div>
+</div>
+</body>
+</html>
